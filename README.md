@@ -14,7 +14,7 @@ npx hardhat ignition deploy ./ignition/modules/Lock.ts
 
 const [owner] = await ethers.getSigners();
 const Turbo = await ethers.getContractFactory("TurboContract");
-const myToken = Turbo.attach("0x...адрес*контракта*в_sepolia");
+const myToken = Turbo.attach("0x...");
 const balance = await myToken.balanceOf(await owner.getAddress());
 balance.toString();
 
