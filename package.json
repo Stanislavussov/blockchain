@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "hardhat:deploy:sepolia": "npx hardhat ignition deploy ./ignition/modules/Lock.ts --network sepolia",
-    "hardhat:compile": "npx hardhat compile && tsx ./scripts/abi-script.ts",
-    "sepolia:console": "npx hardhat console --network sepolia",
-    "wallet:show-address": "tsx ./scripts/get-ethers-wallet-address.ts"
+    "deploy": "npx hardhat ignition deploy ./ignition/modules/Lock.ts --network sepolia",
+    "compile": "npx hardhat compile && tsx ./scripts/abi-script.ts",
+    "console": "npx hardhat console --network sepolia",
+    "wallet-address": "tsx ./scripts/get-ethers-wallet-address.ts"
   },
   "author": "",
   "license": "ISC",

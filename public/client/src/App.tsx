@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Web3 from "web3";
 import TurboContractApplicationBinaryInterface from "./abi/TurboContract.abi.json";
 
-const META_MASK_ACCOUNT_ADDRESS = "0x84cCF7d3DaDD90bC1E8617F09852aB1069B5fcA9";
+const WALLET = "0x1645ADb508615FEFF89a5678c112c1Ea21fffdd9";
 
 export const App = () => {
   const [web3, setWeb3] = useState<Web3 | null>(null);
@@ -23,7 +23,7 @@ export const App = () => {
 
         const contract = new web3Instance.eth.Contract(
           TurboContractApplicationBinaryInterface,
-          META_MASK_ACCOUNT_ADDRESS
+          WALLET
         );
         const rawBalance: string = await contract.methods
           .balanceOf(accounts[0])
@@ -42,7 +42,7 @@ export const App = () => {
     if (!web3) return;
     const contract = new web3.eth.Contract(
       TurboContractApplicationBinaryInterface,
-      META_MASK_ACCOUNT_ADDRESS
+      WALLET
     );
     const value = web3.utils.toWei(amount, "ether");
     await contract.methods.transfer(recipient, value).send({ from: account });
